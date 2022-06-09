@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeAjaxCRUDController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('employee-dt-ajax-crud', [EmployeeAjaxCRUDController::class, 'index']);
+Route::post('store-employee', [EmployeeAjaxCRUDController::class, 'store']);
+Route::post('edit-employee', [EmployeeAjaxCRUDController::class, 'edit']);
+Route::post('delete-employee', [EmployeeAjaxCRUDController::class, 'destroy']);
